@@ -46,12 +46,8 @@ body {
 .start-box__submit-btn {
     width: 246px;
     height: 50px;
-
     margin-bottom: 49px;
 
-    /* Salad / 60 */
-
-    background: #7AC100;
     border-radius: 12px;
     border: none;
 
@@ -59,18 +55,15 @@ body {
     line-height: 32px;
     /* or 133% */
 
-    /* display: flex;
-    align-items: center;
-    text-align: center; */
-
     color: #FFFFFF;
+    background: #7AC100;
 }
 
 .start-box__select-btns {
+    margin-bottom: 67px;
+    
     display: flex;
     gap: 24px;
-    margin-bottom: 67px;
-
 }
 
 
@@ -78,13 +71,13 @@ body {
     width: 97px;
     height: 98px;
 
+    border: none;
+    border-radius: 12px;
+
     font-weight: 400;
     font-size: 64px;
     line-height: 72px;
     /* or 112% */
-
-    border: none;
-    border-radius: 12px;
 
     color: #0080C1;
 }
