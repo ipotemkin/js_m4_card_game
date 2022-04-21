@@ -1,7 +1,7 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: 'StratosSkyeng';
+    font-family: 'Stratos LC Web';
 }
 
 body {
@@ -21,6 +21,7 @@ body {
     margin-top: 52px;
     margin-bottom: 48px;
 
+    font-weight: 400;
     font-size: 40px;
     line-height: 48px;
     /* or 120% */
@@ -77,8 +78,6 @@ body {
     width: 97px;
     height: 98px;
 
-    font-family: 'StratosSkyeng';
-    font-style: normal;
     font-weight: 400;
     font-size: 64px;
     line-height: 72px;
