@@ -14,7 +14,7 @@ body {
     background: #004980;
 }
 
-.title {
+.form__title {
     width: 208px;
     height: 96px;
     
@@ -30,7 +30,7 @@ body {
     color: #004980;
 }
 
-.start-box {
+.form {
     width: 480px;
     height: 459px;
 
@@ -43,9 +43,10 @@ body {
     border-radius: 12px;
 }
 
-.start-box__submit-btn {
+.form__submit-btn {
     width: 246px;
     height: 50px;
+    margin-top: 67px;
     margin-bottom: 49px;
 
     border-radius: 12px;
@@ -59,25 +60,51 @@ body {
     background: #7AC100;
 }
 
-.start-box__select-btns {
-    margin-bottom: 67px;
-    
-    display: flex;
-    gap: 24px;
+.from__submit-btn:hover {
+    cursor: pointer;
 }
 
+.form__level-area {
+    height: 120px;
+    display: flex;    
+    overflow: hidden;
+}
 
-.start-box__select-btns__btn {
+.form__level-area:not(:checked) > input {
+    display: none;
+}
+
+/* .form__level-area > input {
+    display: none;
+} */
+
+.form__level-area:not(:checked) > label {
+    float: right;
+        
     width: 97px;
-    height: 98px;
+    /* height: 100px; */
+    margin-left: 12px;
+    margin-right: 12px;
 
     border: none;
     border-radius: 12px;
 
+    text-align: center;
     font-weight: 400;
     font-size: 64px;
-    line-height: 72px;
+    line-height: 100px;
+    /* line-height: 72px; */
     /* or 112% */
-
+    
     color: #0080C1;
+    background: #FFFFFF;;
+}
+
+.form__level-area > input:checked + label {
+    border: 1px solid;
+}
+
+.form__level-area:not(:checked) > label:hover
+{
+    cursor: pointer;
 }

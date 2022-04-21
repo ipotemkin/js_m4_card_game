@@ -9,14 +9,37 @@
     <link href = "fonts/stratos/stylesheet.css" rel = "stylesheet" type = "text/css" />
 </head>
 <body>
-    <form class="start-box">
-        <h1 class="title">Выбери сложность</h1>
-        <div class="start-box__select-btns">
-            <button class="start-box__select-btns__btn">1</button>
-            <button class="start-box__select-btns__btn">2</button>
-            <button class="start-box__select-btns__btn">3</button>
+    <form class="form" name="form">
+        <h1 class="form__title">Выбери сложность</h1>
+        <div class="field form__level-area">
+            <input type="radio" id="level-1" name="level" value="1">
+            <label for="level-1" title="Оценка «1»">1</label>  
+            
+            <input type="radio" id="level-2" name="level" value="2">
+            <label for="level-2" title="Оценка «2»">2</label>  
+            
+            <input type="radio" id="level-3" name="level" value="3">
+            <label for="level-3" title="Оценка «3»">3</label>  
         </div>
-        <input type="submit" class="start-box__submit-btn" value="Старт">
-    </form>    
+        <button type="submit" class="form__submit-btn">Старт</button>
+    </form>
+    <script>
+        window.app = {
+            level: undefined,
+        };
+        
+        const form = document.querySelector('.form');
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const level = window.app = +form.level.value
+            
+            if (!level) return;
+
+            document.body.innerHTML = `<h2 style="color: white;">Выбран уровень: ${level}</h2>`
+        });
+
+    </script>    
 </body>
 </html>
