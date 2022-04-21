@@ -1,0 +1,91 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'StratosSkyeng';
+}
+
+body {
+    height: 100vh;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #004980;
+}
+
+.title {
+    width: 208px;
+    height: 96px;
+    
+    margin-top: 52px;
+    margin-bottom: 48px;
+
+    font-size: 40px;
+    line-height: 48px;
+    /* or 120% */
+
+    text-align: center;
+    color: #004980;
+}
+
+.start-box {
+    width: 480px;
+    height: 459px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    background: #C2F5FF;
+    border-radius: 12px;
+}
+
+.start-box__submit-btn {
+    width: 246px;
+    height: 50px;
+
+    margin-bottom: 49px;
+
+    /* Salad / 60 */
+
+    background: #7AC100;
+    border-radius: 12px;
+    border: none;
+
+    font-size: 24px;
+    line-height: 32px;
+    /* or 133% */
+
+    /* display: flex;
+    align-items: center;
+    text-align: center; */
+
+    color: #FFFFFF;
+}
+
+.start-box__select-btns {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 67px;
+
+}
+
+
+.start-box__select-btns__btn {
+    width: 97px;
+    height: 98px;
+
+    font-family: 'StratosSkyeng';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 72px;
+    /* or 112% */
+
+    border: none;
+    border-radius: 12px;
+
+    color: #0080C1;
+}
