@@ -33,7 +33,7 @@
         const error = document.querySelector('.form__error');
         const submitBtn = document.querySelector('.form__submit-btn');
         
-        const hideError = (event) => error.classList.add('hidden');
+        const hideError = () => error.classList.add('hidden');
         
         form.addEventListener('click', hideError);
         submitBtn.addEventListener('blur', hideError);
@@ -48,7 +48,7 @@
                 return;
             }
 
-            document.body.innerHTML = `<h2 style="color: white;">Выбран уровень: ${level}</h2>`
+            document.body.innerHTML = `<h2 style="color: white;">Выбран уровень: ${level}</h2>`;
         });
 
     </script>    
