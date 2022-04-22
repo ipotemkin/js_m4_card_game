@@ -1,122 +1,127 @@
 html {
-    padding: 0;
-    margin: 0;
-    font-family: 'Stratos LC Web';
+  padding: 0;
+  margin: 0;
+  font-family: 'Stratos LC Web';
 }
 
 body {
-    height: 100vh;
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    background: #004980;
-}
-
-.form__title {
-    width: 208px;
-    height: 96px;
-    
-    margin-top: 52px;
-    margin-bottom: 48px;
-
-    font-weight: 400;
-    font-size: 40px;
-    line-height: 48px;
-    /* or 120% */
-
-    text-align: center;
-    color: #004980;
-}
-
-.form {
-    width: 480px;
-    height: 459px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* justify-content: space-around; */
-    justify-content: top;
-
-    background: #C2F5FF;
-    border-radius: 12px;
-}
-
-.form__submit-btn {
-    width: 246px;
-    height: 50px;
-    margin-top: 67px;
-    /* margin-bottom: 49px; */
-
-    border-radius: 12px;
-    border: none;
-
-    font-size: 24px;
-    line-height: 32px;
-    /* or 133% */
-
-    color: #FFFFFF;
-    background: #7AC100;
-}
-
-.form__submit-btn:hover {
-    cursor: pointer;
-}
-
-.form__level-area {
-    height: 98px;
-    display: flex;    
-    overflow: hidden;
-}
-
-.form__level-area:not(:checked) > input {
-    display: none;
-}
-
-/* .form__level-area > input {
-    display: none;
-} */
-
-.form__level-area:not(:checked) > label {
-    float: right;
-        
-    width: 97px;
-    /* height: 100px; */
-    margin-left: 12px;
-    margin-right: 12px;
-
-    border: none;
-    border-radius: 12px;
-
-    text-align: center;
-    font-weight: 400;
-    font-size: 64px;
-    line-height: 100px;
-    /* line-height: 72px; */
-    /* or 112% */
-    
-    color: #0080C1;
-    background: #FFFFFF;;
-}
-
-.form__level-area > input:checked + label {
-    border: 1px solid;
-}
-
-.form__level-area:not(:checked) > label:hover
-{
-    cursor: pointer;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #004980;
 }
 
 .hidden {
-    display: none;
+  display: none;
+}
+
+.form {
+  width: 480px;
+  height: 459px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* justify-content: space-around; */
+  -webkit-box-pack: top;
+      -ms-flex-pack: top;
+          justify-content: top;
+  background: #C2F5FF;
+  border-radius: 12px;
+}
+
+.form__title {
+  width: 208px;
+  height: 96px;
+  margin-top: 52px;
+  margin-bottom: 48px;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  /* or 120% */
+  text-align: center;
+  color: #004980;
+}
+
+.form__submit-btn {
+  width: 246px;
+  height: 50px;
+  margin-top: 67px;
+  /* margin-bottom: 49px; */
+  border-radius: 12px;
+  border: none;
+  font-size: 24px;
+  line-height: 32px;
+  /* or 133% */
+  color: #FFFFFF;
+  background: #7AC100;
+}
+
+.form__submit-btn:hover {
+  cursor: pointer;
+}
+
+.form__level-area {
+  height: 98px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  /* & > input {
+            display: none;
+        } */
+}
+
+.form__level-area:not(:checked) > input {
+  display: none;
+}
+
+.form__level-area:not(:checked) > label {
+  float: right;
+  width: 97px;
+  /* height: 100px; */
+  margin-left: 12px;
+  margin-right: 12px;
+  border: none;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 100px;
+  /* line-height: 72px; */
+  /* or 112% */
+  color: #0080C1;
+  background: #FFFFFF;
+}
+
+.form__level-area > input:checked + label {
+  border: 1px solid;
+}
+
+.form__level-area:not(:checked) > label:hover {
+  cursor: pointer;
 }
 
 .form__error {
-    margin-top: 8px;
-    margin-bottom: 0px;
-    color: red;
+  margin-top: 8px;
+  margin-bottom: 0px;
+  color: red;
 }
+/*# sourceMappingURL=style.css.map */
