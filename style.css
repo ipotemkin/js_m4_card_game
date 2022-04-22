@@ -1,4 +1,4 @@
-* {
+html {
     padding: 0;
     margin: 0;
     font-family: 'Stratos LC Web';
@@ -8,6 +8,7 @@ body {
     height: 100vh;
     
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
@@ -37,7 +38,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    /* justify-content: space-around; */
+    justify-content: top;
 
     background: #C2F5FF;
     border-radius: 12px;
@@ -47,7 +49,7 @@ body {
     width: 246px;
     height: 50px;
     margin-top: 67px;
-    margin-bottom: 49px;
+    /* margin-bottom: 49px; */
 
     border-radius: 12px;
     border: none;
@@ -60,12 +62,12 @@ body {
     background: #7AC100;
 }
 
-.from__submit-btn:hover {
+.form__submit-btn:hover {
     cursor: pointer;
 }
 
 .form__level-area {
-    height: 120px;
+    height: 98px;
     display: flex;    
     overflow: hidden;
 }
@@ -107,4 +109,14 @@ body {
 .form__level-area:not(:checked) > label:hover
 {
     cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.form__error {
+    margin-top: 8px;
+    margin-bottom: 0px;
+    color: red;
 }
