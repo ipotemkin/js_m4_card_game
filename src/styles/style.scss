@@ -1,16 +1,26 @@
-html {
+* {
   padding: 0;
   margin: 0;
+  color: white;
   font-family: 'Stratos LC Web', sans-serif;
 }
 
-body {
+/* html {
+   font-family: 'Stratos LC Web', sans-serif;
+   color: white;
+ } */
+
+body,
+.canvas {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   background: #004980;
+}
+
+.canvas {
+  justify-content: center;
 }
 
 .hidden {
@@ -110,5 +120,89 @@ body {
     margin-top: 8px;
     margin-bottom: 0;
     color: red;
+  }
+}
+
+/* screen2 */
+
+.container {
+  width: 975px;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 148px;
+  width: 100%;
+}
+
+.clock {
+  position: relative;
+
+  &__time {
+    position: relative;
+    width: 155px;
+    height: 72px;
+    text-align: right;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 72px;
+    color: #fff;
+  }
+
+  &__labels {
+    position: absolute;
+    right: 0;
+    top: -10px;
+    display: flex;
+    justify-content: right;
+
+    &__sec {
+      margin-left: 60px;
+    }
+  }
+}
+
+.restart-btn {
+  min-width: 246px;
+  height: 50px;
+  border-radius: 12px;
+  border: none;
+  font-size: 24px;
+  line-height: 32px;
+  background: #7ac100;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.card-board {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.card-back {
+  height: 121px;
+  width: 83px;
+  padding: 6px;
+  background: #fff;
+  border-radius: 4px;
+  transition: 0.3s;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+  }
+
+  &__img {
+    height: 121px;
+    width: 83px;
+    background: url('..//img/card_back2.svg'), url('..//img/card_back1.svg');
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
   }
 }

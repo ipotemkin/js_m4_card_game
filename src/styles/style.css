@@ -1,10 +1,16 @@
-html {
+* {
   padding: 0;
   margin: 0;
+  color: white;
   font-family: 'Stratos LC Web', sans-serif;
 }
 
-body {
+/* html {
+   font-family: 'Stratos LC Web', sans-serif;
+   color: white;
+ } */
+body,
+.canvas {
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -13,13 +19,16 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   background: #004980;
+}
+
+.canvas {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .hidden {
@@ -123,5 +132,103 @@ body {
   margin-top: 8px;
   margin-bottom: 0;
   color: red;
+}
+
+/* screen2 */
+.container {
+  width: 975px;
+}
+
+.top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 148px;
+  width: 100%;
+}
+
+.clock {
+  position: relative;
+}
+
+.clock__time {
+  position: relative;
+  width: 155px;
+  height: 72px;
+  text-align: right;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 72px;
+  color: #fff;
+}
+
+.clock__labels {
+  position: absolute;
+  right: 0;
+  top: -10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+}
+
+.clock__labels__sec {
+  margin-left: 60px;
+}
+
+.restart-btn {
+  min-width: 246px;
+  height: 50px;
+  border-radius: 12px;
+  border: none;
+  font-size: 24px;
+  line-height: 32px;
+  background: #7ac100;
+}
+
+.restart-btn:hover {
+  cursor: pointer;
+}
+
+.card-board {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 15px;
+}
+
+.card-back {
+  height: 121px;
+  width: 83px;
+  padding: 6px;
+  background: #fff;
+  border-radius: 4px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.card-back:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+}
+
+.card-back__img {
+  height: 121px;
+  width: 83px;
+  background: url("..//img/card_back2.svg"), url("..//img/card_back1.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: center, center;
 }
 /*# sourceMappingURL=style.css.map */

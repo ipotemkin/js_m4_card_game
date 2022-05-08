@@ -8,4 +8,4 @@ rules:
   'prettier/prettier': error
   camelcase: error
   eqeqeq: error
-  # font-family-no-missing-generic-family-keyword: false
+  no-unused-vars: off
