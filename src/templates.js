@@ -22,4 +22,4 @@ function cardFront(image) {
   };
 }
 
-module.exports = { cardBack, cardFront };
+// module.exports = { cardBack, cardFront };
