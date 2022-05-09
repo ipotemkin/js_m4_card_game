@@ -5,6 +5,7 @@ import {
   cardBack,
   cardFront,
 } from './templates';
+import getCardsToPlay from './game';
 
 function renderScreen(template) {
   const { root } = window.app;
@@ -46,10 +47,22 @@ export default function renderWelcomeScreen() {
 
 function renderGameScreen() {
   const screen = renderScreen(gameScreenTemplate());
-
   const cardBoard = screen.querySelector('.card-board');
-  const { cards } = window.app;
-  for (let i = 0; i < 36; i++) {
+
+  let maxCards;
+  switch (window.app.level) {
+    case 1:
+      maxCards = 6;
+      break;
+    case 2:
+      maxCards = 12;
+      break;
+    default:
+      maxCards = 18;
+  }
+  // const maxCards = 18;
+  const cards = getCardsToPlay(maxCards);
+  for (let i = 0; i < maxCards; i++) {
     // cardBoard.appendChild(templateEngine(cardBack()));
     cardBoard.appendChild(templateEngine(cardFront(cards[i].img)));
   }
