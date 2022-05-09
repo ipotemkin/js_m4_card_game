@@ -28,14 +28,14 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({ template: './index.html' }),
-    new HtmlWebpackPlugin({
-      filename: 'screen2.html',
-      template: './screen2.html',
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'screen3.html',
-      template: './screen3.html',
-    }),
+    // new HtmlWebpackPlugin({
+    //   filename: 'screen2.html',
+    //   template: './screen2.html',
+    // }),
+    // new HtmlWebpackPlugin({
+    //   filename: 'screen3.html',
+    //   template: './screen3.html',
+    // }),
     new CopyPlugin({ patterns: [{ from: 'src/img', to: 'static' }] }),
   ],
   optimization: { minimizer: ['...', new CssMinimizerPlugin()] },
