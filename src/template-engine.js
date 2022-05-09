@@ -23,16 +23,12 @@ function templateEngine(block) {
 
   if (block.cls) {
     const classes = [].concat(block.cls);
-    classes.forEach((cls) => {
-      result.classList.add(cls);
-    });
+    classes.forEach((cls) => result.classList.add(cls));
   }
 
   if (block.attrs) {
     const keys = Object.keys(block.attrs);
-    keys.forEach((key) => {
-      result.setAttribute(key, block.attrs[key]);
-    });
+    keys.forEach((key) => result.setAttribute(key, block.attrs[key]));
   }
 
   result.appendChild(templateEngine(block.content));
