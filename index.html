@@ -12,8 +12,8 @@
       type="text/css"
     /> -->
   </head>
-  <body>
-    <div class="canvas">
+  <body class="app">
+    <!-- <div class="canvas">
       <form class="form" name="form">
         <h1 class="form__title">Выбери сложность</h1>
         <div class="field form__level-area">
@@ -29,12 +29,15 @@
         <button type="submit" class="form__submit-btn">Старт</button>
         <p class="form__error hidden">Выберите уровень</p>
       </form>
-    </div>
+    </div> -->
+    <!-- <script src="./src/cards.js"></script> -->
     <script>
       window.app = {
+        root: document.querySelector('.app'),
         level: undefined,
+        cards: undefined,
       };
-
+      // window.app.root = document.querySelector('.app');
       // const form = document.querySelector('.form');
       // const error = document.querySelector('.form__error');
       // const submitBtn = document.querySelector('.form__submit-btn');

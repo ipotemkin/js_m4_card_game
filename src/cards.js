@@ -216,3 +216,5 @@ var cards = [
     img: '6 крести.svg',
   },
 ];
+
+module.exports = { cards };

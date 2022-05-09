@@ -1,7 +1,7 @@
 import { templateEngine } from './template-engine';
 import { cardBack } from './templates';
 
-function main() {
+function screen2() {
   const cardBoard = document.querySelector('.card-board');
   for (let i = 0; i < 36; i++) {
     cardBoard.appendChild(templateEngine(cardBack()));
@@ -9,4 +9,4 @@ function main() {
   }
 }
 
-main();
+module.exports = { screen2 };

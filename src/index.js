@@ -1,5 +1,9 @@
 import './styles/fonts/stratos/stylesheet.css';
 import './styles/style.css';
+import { templateEngine } from './template-engine';
+import { cardBack, cardBoard } from './templates';
+import renderWelcomeScreen from './screens';
+import { cards } from './cards';
 
 function main() {
   const form = document.querySelector('.form');
@@ -26,4 +30,15 @@ function main() {
   });
 }
 
-main();
+function screen2() {
+  const cardBoard = document.querySelector('.card-board');
+  for (let i = 0; i < 36; i++) {
+    cardBoard.appendChild(templateEngine(cardBack()));
+    // cardBoard.appendChild(templateEngine(cardFront(cards[i].img)));
+  }
+}
+
+// module.exports = { main, screen2 };
+window.app.cards = cards;
+renderWelcomeScreen();
+// screen2();
