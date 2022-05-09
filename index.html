@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page 1</title>
-    <link rel="stylesheet" href="./src/styles/style.css" />
+    <!-- <link rel="stylesheet" href="./src/styles/style.css" />
     <link
       href="./src/styles/fonts/stratos/stylesheet.css"
       rel="stylesheet"
       type="text/css"
-    />
+    /> -->
   </head>
   <body>
     <div class="canvas">
@@ -35,27 +35,28 @@
         level: undefined,
       };
 
-      const form = document.querySelector('.form');
-      const error = document.querySelector('.form__error');
-      const submitBtn = document.querySelector('.form__submit-btn');
+      // const form = document.querySelector('.form');
+      // const error = document.querySelector('.form__error');
+      // const submitBtn = document.querySelector('.form__submit-btn');
 
-      const hideError = () => error.classList.add('hidden');
+      // const hideError = () => error.classList.add('hidden');
 
-      form.addEventListener('click', hideError);
-      submitBtn.addEventListener('blur', hideError);
+      // form.addEventListener('click', hideError);
+      // submitBtn.addEventListener('blur', hideError);
 
-      form.addEventListener('submit', (event) => {
-        event.preventDefault();
+      // form.addEventListener('submit', (event) => {
+      //   event.preventDefault();
 
-        const level = (window.app = +form.level.value);
+      //   const level = (window.app = +form.level.value);
 
-        if (!level) {
-          error.classList.remove('hidden');
-          return;
-        }
+      //   if (!level) {
+      //     error.classList.remove('hidden');
+      //     return;
+      //   }
 
-        document.body.innerHTML = `<h2 style="color: white;">Выбран уровень: ${level}</h2>`;
-      });
+      //   document.body.innerHTML = `<h2 style="color: white;">Выбран уровень: ${level}</h2>`;
+      // });
     </script>
+    <!-- <script src="./src/index.js"></script> -->
   </body>
 </html>

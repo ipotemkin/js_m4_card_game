@@ -26,9 +26,9 @@
       <div class="card-board"></div>
     </div>
 
-    <script src="./src/template-engine.js"></script>
+    <!-- <script src="./src/template-engine.js"></script>
     <script src="./src/templates.js"></script>
-    <script src="./src/cards.js"></script>
+    <script src="./src/cards.js"></script> -->
     <script>
       window.app = {
         level: undefined,
@@ -36,11 +36,12 @@
       // import { templateEngine } from "./src/template-engine.js";
       // import { cardBack } from "./src/templates.js";
 
-      const cardBoard = document.querySelector('.card-board');
-      for (let i = 0; i < 36; i++) {
-        cardBoard.appendChild(templateEngine(cardBack()));
-        // cardBoard.appendChild(templateEngine(cardFront(cards[i].img)));
-      }
+      // const cardBoard = document.querySelector('.card-board');
+      // for (let i = 0; i < 36; i++) {
+      //   cardBoard.appendChild(templateEngine(cardBack()));
+      //   // cardBoard.appendChild(templateEngine(cardFront(cards[i].img)));
+      // }
     </script>
+    <script src="./src/screen2.js"></script>
   </body>
 </html>

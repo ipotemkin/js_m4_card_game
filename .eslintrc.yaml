@@ -9,3 +9,5 @@ rules:
   camelcase: error
   eqeqeq: error
   no-unused-vars: off
+parserOptions:
+  sourceType: 'module'
