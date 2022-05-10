@@ -183,17 +183,19 @@ body,
 
 .card-board {
   /* width: 100%; */
-  width: 645px;
+  width: 667px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
+
+  /* gap: 15px; */
 }
 
 .card {
   height: 121px;
   width: 83px;
   padding: 6px;
+  margin: 8px;
   background: #fff;
   border-radius: 4px;
   transition: 0.3s;
