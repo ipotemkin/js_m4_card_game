@@ -15,7 +15,7 @@ import {
 function renderScreen(template) {
   const { root } = window.app;
 
-  console.log(root);
+  // console.log(root);
   root.textContent = '';
 
   const screen = templateEngine(template);
@@ -99,7 +99,7 @@ function renderGameScreen() {
           closeMissedPair(card);
         }, 500);
         setTimeout(() => {
-          alert('Вы проиграли!');
+          alert('Упс! Вы не угадали!');
         }, 100);
       }
     });
