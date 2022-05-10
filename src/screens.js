@@ -12,6 +12,7 @@ import {
   hideCardsFaces,
   restartGame,
 } from './game';
+import timer from './timer';
 
 function renderScreen(template) {
   const { root } = window.app;
@@ -59,6 +60,8 @@ export default function renderWelcomeScreen() {
     }
     window.app.maxCards = maxCards;
 
+    // console.log(window.app.maxCards);
+
     renderGameScreen();
     // screen.innerHTML = `<h2 style="color: white;">Выбран уровень: ${level}</h2>`;
   });
@@ -68,13 +71,18 @@ function renderGameScreen() {
   const screen = renderScreen(gameScreenTemplate());
   const cardBoard = screen.querySelector('.card-board');
   const restartBtn = screen.querySelector('.restart-btn');
+  const clock = screen.querySelector('.clock__time');
 
   restartBtn.addEventListener('click', () => {
     // alert('Новая игра');
     restartGame();
   });
 
+  clock.textContent = '00.00';
   const { maxCards } = window.app;
+
+  // console.log('renderGameScreen:maxCards =', maxCards);
+
   const cards = getCardsToPlay(maxCards);
   for (let i = 0; i < maxCards; i++) {
     // cardBoard.appendChild(templateEngine(cardBack()));
@@ -97,6 +105,8 @@ function renderGameScreen() {
       // if not
       if (checkCard(card)) {
         if (window.app.openCardsCount === window.app.maxCards) {
+          clearInterval(window.app.timer);
+          window.app.timer = undefined;
           setTimeout(() => {
             alert('Вы выиграли!');
           }, 100);
@@ -113,4 +123,5 @@ function renderGameScreen() {
   }
 
   setTimeout(hideCardsFaces, 5000);
+  window.app.timer = setInterval(timer, 1000);
 }

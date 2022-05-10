@@ -79,5 +79,7 @@ export function hideCardsFaces() {
 }
 
 export function restartGame() {
+  window.app.timerValue = 0;
+  window.app.openCardsCount = 0;
   renderWelcomeScreen();
 }
