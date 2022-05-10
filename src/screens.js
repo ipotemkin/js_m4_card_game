@@ -2,7 +2,6 @@ import { templateEngine } from './template-engine';
 import {
   welcomeScreenTemplate,
   gameScreenTemplate,
-  cardBack,
   cardFront,
 } from './templates';
 import {
@@ -99,57 +98,12 @@ function renderGameScreen() {
         setTimeout(() => {
           closeMissedPair(card);
         }, 500);
+        setTimeout(() => {
+          alert('Вы проиграли!');
+        }, 100);
       }
     });
   }
 
   setTimeout(hideCardsFaces, 5000);
 }
-
-// function closeMissedPair(card) {
-//   closeCard(card);
-//   closeCard(window.app.prevOpenCard);
-// }
-
-// function checkCard(card) {
-//   return window.app.prevOpenCard.dataset.cardPk === card.dataset.cardPk;
-// }
-
-// function toggleCard(card) {
-//   const cardFace = card.querySelector('.card__face');
-//   const cardBack = card.querySelector('.card__back');
-
-//   if (cardFace.classList.contains('hidden')) {
-//     cardBack.classList.add('hidden');
-//     cardFace.classList.remove('hidden');
-//     card.dataset.open = true;
-//     window.app.openCardsCount++;
-//   } else {
-//     cardFace.classList.add('hidden');
-//     cardBack.classList.remove('hidden');
-//     card.dataset.open = false;
-//     window.app.openCardsCount--;
-//   }
-// }
-
-// function openCard(card) {
-//   if (card.dataset.open === 'true') return;
-//   toggleCard(card);
-// }
-
-// function closeCard(card) {
-//   if (card.dataset.open !== 'true') return;
-//   toggleCard(card);
-// }
-
-// function hideCardsFaces() {
-//   const cards = document.querySelectorAll('.card');
-//   const cardFaces = document.querySelectorAll('.card__face');
-//   const cardBacks = document.querySelectorAll('.card__back');
-
-//   cards.forEach((card) => (card.dataset.open = false));
-//   cardFaces.forEach((card) => card.classList.add('hidden'));
-//   cardBacks.forEach((card) => card.classList.remove('hidden'));
-// }
-
-// module.exports = { renderScreen, renderWelcomeScreen };

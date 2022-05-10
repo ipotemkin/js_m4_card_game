@@ -76,12 +76,3 @@ export function hideCardsFaces() {
   cardFaces.forEach((card) => card.classList.add('hidden'));
   cardBacks.forEach((card) => card.classList.remove('hidden'));
 }
-
-// module.exports = {
-//   getCardsToPlay,
-//   closeMissedPair,
-//   checkCard,
-//   openCard,
-//   closeCard,
-//   hideCardsFaces,
-// };
