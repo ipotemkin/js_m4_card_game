@@ -3,6 +3,7 @@ import {
   welcomeScreenTemplate,
   gameScreenTemplate,
   cardFront,
+  msgBoxTemplate,
 } from './templates';
 import {
   getCardsToPlay,
@@ -14,11 +15,11 @@ import {
 } from './game';
 import timer from './timer';
 
-function renderScreen(template) {
+function renderScreen(template, cleanBackground = true) {
   const { root } = window.app;
 
   // console.log(root);
-  root.textContent = '';
+  if (cleanBackground) root.textContent = '';
 
   const screen = templateEngine(template);
   root.appendChild(screen);
@@ -109,21 +110,43 @@ function renderGameScreen() {
         if (window.app.openCardsCount === window.app.maxCards) {
           clearInterval(window.app.timer);
           window.app.timer = undefined;
-          setTimeout(() => {
-            alert('Вы выиграли!');
-          }, 100);
+
+          renderWinMsgBox();
+
+          // setTimeout(() => {
+          //   alert('Вы выиграли!');
+          // }, 100);
         }
       } else {
         setTimeout(() => {
           closeMissedPair(card);
         }, 500);
-        setTimeout(() => {
-          alert('Упс! Вы не угадали!');
-        }, 100);
+        // setTimeout(() => {
+        //   alert('Упс! Вы не угадали!');
+        // }, 100);
       }
     });
   }
 
   setTimeout(hideCardsFaces, 5000);
   window.app.timer = setInterval(timer, 1000);
+}
+
+function renderWinMsgBox() {
+  renderMsgBox('Вы выиграли!', './static/win.svg');
+}
+
+function renderLoseMsgBox() {
+  renderMsgBox('Вы проиграли!', './static/lose.svg');
+}
+
+function renderMsgBox(message, icon) {
+  const time = document.querySelector('.clock__time');
+  const screen = renderScreen(
+    msgBoxTemplate(message, time.textContent, icon),
+    false
+  );
+  const form = screen.querySelector('.form-msgbox');
+  const submitBtn = screen.querySelector('.form-msgbox__submit-btn');
+  submitBtn.addEventListener('click', () => restartGame());
 }

@@ -176,9 +176,52 @@ function gameScreenTemplate() {
   };
 }
 
+function msgBoxTemplate(message, time, icon = null) {
+  return {
+    tag: 'div',
+    cls: 'form-msgbox-canvas',
+    content: {
+      tag: 'div',
+      cls: 'form-msgbox',
+      content: [
+        {
+          tag: 'img',
+          cls: 'form-msgbox__icon',
+          attrs: { src: `${icon}` },
+          // content: `'${icon}'`,
+        },
+        {
+          tag: 'div',
+          cls: 'form-msgbox__title',
+          content: message,
+        },
+        {
+          tag: 'p',
+          cls: 'form-msgbox__time-label',
+          content: 'Затраченное время:',
+        },
+        {
+          tag: 'p',
+          cls: 'form-msgbox__time',
+          content: time,
+        },
+        {
+          tag: 'button',
+          cls: 'form-msgbox__submit-btn',
+          attrs: {
+            type: 'submit',
+          },
+          content: 'Играть снова',
+        },
+      ],
+    },
+  };
+}
+
 module.exports = {
   cardBack,
   cardFront,
   welcomeScreenTemplate,
   gameScreenTemplate,
+  msgBoxTemplate,
 };

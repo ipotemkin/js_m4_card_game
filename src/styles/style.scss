@@ -199,6 +199,7 @@ body,
   background: #fff;
   border-radius: 4px;
   transition: 0.3s;
+  transform: rotateY(180deg);
 
   &:hover {
     cursor: pointer;
@@ -208,6 +209,8 @@ body,
   &__face {
     height: 100%;
     width: 100%;
+
+    /* transform: rotate(180deg); */
   }
 
   &__back {
@@ -216,5 +219,88 @@ body,
     background: url('..//img/card_back2.svg'), url('..//img/card_back1.svg');
     background-repeat: no-repeat, no-repeat;
     background-position: center, center;
+  }
+}
+
+.form-msgbox-canvas {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100vh;
+  background: rgb(0 73 128 / 50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-msgbox {
+  z-index: 2;
+  width: 480px;
+  height: 459px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  justify-content: top;
+  background: #c2f5ff;
+  border-radius: 12px;
+
+  &__icon {
+    width: 96px;
+    height: 96px;
+    margin-top: 30px;
+    margin-bottom: 4px;
+  }
+
+  &__title {
+    width: 280px;
+    height: 48px;
+    margin-bottom: 28px;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+
+    /* or 120% */
+    text-align: center;
+    color: #004980;
+  }
+
+  &__time-label {
+    width: 230px;
+    height: 32px;
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    color: #000;
+  }
+
+  &__time {
+    width: 155px;
+    height: 72px;
+    margin-bottom: 40px;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 72px;
+    color: #000;
+  }
+
+  &__submit-btn {
+    width: 246px;
+    height: 50px;
+
+    /* margin-bottom: 49px; */
+    border-radius: 12px;
+    border: none;
+    font-size: 24px;
+    line-height: 32px;
+
+    /* or 133% */
+    color: #fff;
+    background: #7ac100;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
