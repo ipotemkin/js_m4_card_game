@@ -75,6 +75,8 @@ function renderGameScreen() {
 
   restartBtn.addEventListener('click', () => {
     // alert('Новая игра');
+    clearInterval(window.app.timer);
+    window.app.timer = undefined;
     restartGame();
   });
 

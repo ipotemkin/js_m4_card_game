@@ -4,6 +4,7 @@ export default function timer() {
 
 function showTime(seconds) {
   const clock = document.querySelector('.clock__time');
+  //   console.log(clock);
   clock.textContent = timeToString(seconds);
 }
 
