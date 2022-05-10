@@ -1,4 +1,5 @@
 import { cards } from './cards';
+import renderWelcomeScreen from './screens';
 
 export function getCardsToPlay(cardsCount) {
   const randomNumbers = getRandomNumbers(cardsCount / 2);
@@ -75,4 +76,8 @@ export function hideCardsFaces() {
   cards.forEach((card) => (card.dataset.open = false));
   cardFaces.forEach((card) => card.classList.add('hidden'));
   cardBacks.forEach((card) => card.classList.remove('hidden'));
+}
+
+export function restartGame() {
+  renderWelcomeScreen();
 }

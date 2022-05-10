@@ -10,6 +10,7 @@ import {
   checkCard,
   closeMissedPair,
   hideCardsFaces,
+  restartGame,
 } from './game';
 
 function renderScreen(template) {
@@ -66,6 +67,12 @@ export default function renderWelcomeScreen() {
 function renderGameScreen() {
   const screen = renderScreen(gameScreenTemplate());
   const cardBoard = screen.querySelector('.card-board');
+  const restartBtn = screen.querySelector('.restart-btn');
+
+  restartBtn.addEventListener('click', () => {
+    // alert('Новая игра');
+    restartGame();
+  });
 
   const { maxCards } = window.app;
   const cards = getCardsToPlay(maxCards);
