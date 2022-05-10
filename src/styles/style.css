@@ -208,7 +208,7 @@ body,
   gap: 15px;
 }
 
-.card-back {
+.card {
   height: 121px;
   width: 83px;
   padding: 6px;
@@ -218,13 +218,18 @@ body,
   transition: 0.3s;
 }
 
-.card-back:hover {
+.card:hover {
   cursor: pointer;
   -webkit-transform: scale(1.03);
           transform: scale(1.03);
 }
 
-.card-back__img {
+.card__face {
+  height: 100%;
+  width: 100%;
+}
+
+.card__back {
   height: 121px;
   width: 83px;
   background: url("..//img/card_back2.svg"), url("..//img/card_back1.svg");

@@ -1,11 +1,16 @@
 function cardBack() {
   return {
     tag: 'div',
-    cls: 'card-back',
+    cls: 'card',
     content: [
       {
         tag: 'div',
-        cls: 'card-back__img',
+        cls: ['card__face', 'hidden'],
+        // attrs: { style: 'display: none' },
+      },
+      {
+        tag: 'div',
+        cls: 'card__back',
       },
     ],
   };
@@ -16,10 +21,20 @@ function cardFront(image) {
   const url = './static/' + image;
   return {
     tag: 'div',
-    cls: 'card-back',
-    attrs: {
-      style: `background: url('${url}') no-repeat center;`,
-    },
+    cls: 'card',
+    content: [
+      {
+        tag: 'div',
+        cls: 'card__face',
+        attrs: {
+          style: `background: url('${url}') no-repeat center;`,
+        },
+      },
+      {
+        tag: 'div',
+        cls: ['card__back', 'hidden'],
+      },
+    ],
   };
 }
 

@@ -185,7 +185,7 @@ body,
   gap: 15px;
 }
 
-.card-back {
+.card {
   height: 121px;
   width: 83px;
   padding: 6px;
@@ -198,7 +198,12 @@ body,
     transform: scale(1.03);
   }
 
-  &__img {
+  &__face {
+    height: 100%;
+    width: 100%;
+  }
+
+  &__back {
     height: 121px;
     width: 83px;
     background: url('..//img/card_back2.svg'), url('..//img/card_back1.svg');
