@@ -231,8 +231,6 @@ body,
   border-radius: 4px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
 }
 
 .card:hover {
@@ -244,7 +242,6 @@ body,
 .card__face {
   height: 100%;
   width: 100%;
-  /* transform: rotate(180deg); */
 }
 
 .card__back {
