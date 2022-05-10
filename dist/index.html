@@ -1,5 +1,10 @@
 <!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Page 1</title><script defer="defer" src="bundle.js"></script><link href="main.css" rel="stylesheet"></head><body class="app"><script>window.app = {
         root: document.querySelector('.app'),
-        level: undefined,
-        cards: undefined,
+        level: undefined,  // game level
+        cards: undefined,  // to store cards set
+        maxCards: undefined,  // card number in the current game level
+        prevOpenCard: undefined,  // previous open card to check
+        openCardsCount: 0,
+        timer: undefined,
+        timerValue: 0,
       };</script></body></html>
