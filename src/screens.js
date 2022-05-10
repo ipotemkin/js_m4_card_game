@@ -69,6 +69,8 @@ function renderGameScreen() {
     const card = cardBoard.appendChild(templateEngine(cardFront(cards[i].img)));
     card.addEventListener('click', () => {
       toggleCard(card);
+      // window.app.openCardsCount++;
+      console.log(window.app.openCardsCount);
     });
   }
   // const playingCards = cardBoard.querySelectorAll('.card');
@@ -88,15 +90,23 @@ function toggleCard(card) {
   if (cardFace.classList.contains('hidden')) {
     cardBack.classList.add('hidden');
     cardFace.classList.remove('hidden');
+    // card.dataset.open = true;
+    window.app.openCardsCount++;
   } else {
     cardFace.classList.add('hidden');
     cardBack.classList.remove('hidden');
+    // card.dataset.open = false;
+    window.app.openCardsCount--;
   }
+  card.dataset.open = !card.dataset.open;
 }
 
 function hideCardsFaces() {
+  const cards = document.querySelectorAll('.card');
   const cardFaces = document.querySelectorAll('.card__face');
   const cardBacks = document.querySelectorAll('.card__back');
+
+  cards.forEach((card) => (card.dataset.open = false));
   cardFaces.forEach((card) => card.classList.add('hidden'));
   cardBacks.forEach((card) => card.classList.remove('hidden'));
 }

@@ -10,9 +10,11 @@
     <script>
       window.app = {
         root: document.querySelector('.app'),
-        level: undefined,
-        cards: undefined,
-        maxCards: undefined,
+        level: undefined,  // game level
+        cards: undefined,  // to store cards set
+        maxCards: undefined,  // card number in the current game level
+        prevOpenCard: undefined,  // previous open card to check
+        openCardsCount: 0,
       };
     </script>
   </body>
