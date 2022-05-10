@@ -5,7 +5,13 @@ import {
   cardBack,
   cardFront,
 } from './templates';
-import getCardsToPlay from './game';
+import {
+  getCardsToPlay,
+  openCard,
+  checkCard,
+  closeMissedPair,
+  hideCardsFaces,
+} from './game';
 
 function renderScreen(template) {
   const { root } = window.app;
@@ -67,48 +73,83 @@ function renderGameScreen() {
   for (let i = 0; i < maxCards; i++) {
     // cardBoard.appendChild(templateEngine(cardBack()));
     const card = cardBoard.appendChild(templateEngine(cardFront(cards[i].img)));
+    card.dataset.cardPk = cards[i].pk;
     card.addEventListener('click', () => {
-      toggleCard(card);
-      // window.app.openCardsCount++;
-      console.log(window.app.openCardsCount);
+      // if cards are open or before hideCardsFaces
+      if (card.dataset.open === 'true' || card.dataset.open === undefined)
+        return;
+
+      openCard(card);
+
+      // if the first card in a pair
+      if (window.app.openCardsCount % 2 > 0) {
+        window.app.prevOpenCard = card;
+        // console.log('open cards pair =', window.app.openCardsCount % 2);
+        return;
+      }
+
+      // if not
+      if (checkCard(card)) {
+        if (window.app.openCardsCount === window.app.maxCards) {
+          setTimeout(() => {
+            alert('Вы выиграли!');
+          }, 100);
+        }
+      } else {
+        setTimeout(() => {
+          closeMissedPair(card);
+        }, 500);
+      }
     });
   }
-  // const playingCards = cardBoard.querySelectorAll('.card');
-  // playingCards.forEach((card) => {
-  //   card.addEventListener('click', () => {
-  //     toggleCard(card);
-  //   });
-  // });
 
-  setTimeout(hideCardsFaces, 500);
+  setTimeout(hideCardsFaces, 5000);
 }
 
-function toggleCard(card) {
-  const cardFace = card.querySelector('.card__face');
-  const cardBack = card.querySelector('.card__back');
+// function closeMissedPair(card) {
+//   closeCard(card);
+//   closeCard(window.app.prevOpenCard);
+// }
 
-  if (cardFace.classList.contains('hidden')) {
-    cardBack.classList.add('hidden');
-    cardFace.classList.remove('hidden');
-    // card.dataset.open = true;
-    window.app.openCardsCount++;
-  } else {
-    cardFace.classList.add('hidden');
-    cardBack.classList.remove('hidden');
-    // card.dataset.open = false;
-    window.app.openCardsCount--;
-  }
-  card.dataset.open = !card.dataset.open;
-}
+// function checkCard(card) {
+//   return window.app.prevOpenCard.dataset.cardPk === card.dataset.cardPk;
+// }
 
-function hideCardsFaces() {
-  const cards = document.querySelectorAll('.card');
-  const cardFaces = document.querySelectorAll('.card__face');
-  const cardBacks = document.querySelectorAll('.card__back');
+// function toggleCard(card) {
+//   const cardFace = card.querySelector('.card__face');
+//   const cardBack = card.querySelector('.card__back');
 
-  cards.forEach((card) => (card.dataset.open = false));
-  cardFaces.forEach((card) => card.classList.add('hidden'));
-  cardBacks.forEach((card) => card.classList.remove('hidden'));
-}
+//   if (cardFace.classList.contains('hidden')) {
+//     cardBack.classList.add('hidden');
+//     cardFace.classList.remove('hidden');
+//     card.dataset.open = true;
+//     window.app.openCardsCount++;
+//   } else {
+//     cardFace.classList.add('hidden');
+//     cardBack.classList.remove('hidden');
+//     card.dataset.open = false;
+//     window.app.openCardsCount--;
+//   }
+// }
+
+// function openCard(card) {
+//   if (card.dataset.open === 'true') return;
+//   toggleCard(card);
+// }
+
+// function closeCard(card) {
+//   if (card.dataset.open !== 'true') return;
+//   toggleCard(card);
+// }
+
+// function hideCardsFaces() {
+//   const cards = document.querySelectorAll('.card');
+//   const cardFaces = document.querySelectorAll('.card__face');
+//   const cardBacks = document.querySelectorAll('.card__back');
+
+//   cards.forEach((card) => (card.dataset.open = false));
+//   cardFaces.forEach((card) => card.classList.add('hidden'));
+//   cardBacks.forEach((card) => card.classList.remove('hidden'));
+// }
 
 // module.exports = { renderScreen, renderWelcomeScreen };
