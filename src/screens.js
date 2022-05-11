@@ -110,24 +110,20 @@ function renderGameScreen() {
       // if not
       if (checkCard(card)) {
         if (window.app.openCardsCount === window.app.maxCards) {
-          // clearInterval(window.app.timer);
-          // window.app.timer = undefined;
-
           stopGame();
           renderWinMsgBox();
-
-          // setTimeout(() => {
-          //   alert('Вы выиграли!');
-          // }, 100);
         }
       } else {
-        stopGame();
-        renderLoseMsgBox();
-
-        // to close a wrong pair if the player is given several attempts
-        // setTimeout(() => {
-        //   closeMissedPair(card);
-        // }, 500);
+        if (++window.app.errorCount >= 3) {
+          stopGame();
+          renderLoseMsgBox();
+        } else {
+          // to close a wrong pair if the player is given several attempts
+          // TODO to block card picking before closeMissedPair
+          setTimeout(() => {
+            closeMissedPair(card);
+          }, 500);
+        }
 
         // setTimeout(() => {
         //   alert('Упс! Вы не угадали!');
@@ -154,7 +150,7 @@ function renderMsgBox(message, icon) {
     msgBoxTemplate(message, time.textContent, icon),
     false
   );
-  const form = screen.querySelector('.form-msgbox');
+  // const form = screen.querySelector('.form-msgbox');
   const submitBtn = screen.querySelector('.form-msgbox__submit-btn');
   submitBtn.addEventListener('click', () => restartGame());
 }
