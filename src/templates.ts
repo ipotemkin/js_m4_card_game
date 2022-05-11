@@ -238,11 +238,3 @@ export function msgBoxTemplate(message: string, time: string | null, icon: strin
     },
   };
 }
-
-// module.exports = {
-//   cardBack,
-//   cardFront,
-//   welcomeScreenTemplate,
-//   gameScreenTemplate,
-//   msgBoxTemplate,
-// };

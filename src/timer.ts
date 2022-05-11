@@ -4,9 +4,7 @@ export default function timer(): void {
 
 function showTime(seconds: number): void {
   const clock = document.querySelector('.clock__time');
-  //   console.log(clock);
-  if (clock) 
-  clock.textContent = timeToString(seconds);
+  if (clock) clock.textContent = timeToString(seconds);
 }
 
 function timeToString(seconds: number): string {
@@ -15,8 +13,8 @@ function timeToString(seconds: number): string {
   return `${zeroPrefix(min)}.${zeroPrefix(sec)}`;
 }
 
-function zeroPrefix(str): string {
-  str = str.toString();
+function zeroPrefix(number: number): string {
+  let str = String(number);
   if (str.length < 2) str = '0' + str;
   return str;
 }

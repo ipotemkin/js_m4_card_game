@@ -25,10 +25,10 @@ declare global {
 
 window.app = {
   root: document.querySelector('.app'),
-  level: undefined,  // game level
-  cards: cards,  // to store cards set
-  maxCards: 6,  // card number in the current game level
-  prevOpenCard: undefined,  // previous open card to check
+  level: undefined,
+  cards: cards,
+  maxCards: 6,
+  prevOpenCard: undefined,
   openCardsCount: 0,
   timer: undefined,
   timerValue: 0,
