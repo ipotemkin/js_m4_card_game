@@ -62,10 +62,7 @@ export default function renderWelcomeScreen() {
     }
     window.app.maxCards = maxCards;
 
-    // console.log(window.app.maxCards);
-
     renderGameScreen();
-    // screen.innerHTML = `<h2 style="color: white;">Выбран уровень: ${level}</h2>`;
   });
 }
 
@@ -76,9 +73,6 @@ function renderGameScreen() {
   const clock = screen.querySelector('.clock__time');
 
   restartBtn.addEventListener('click', () => {
-    // alert('Новая игра');
-    // clearInterval(window.app.timer);
-    // window.app.timer = undefined;
     stopGame();
     restartGame();
   });
@@ -103,7 +97,6 @@ function renderGameScreen() {
       // if the first card in a pair
       if (window.app.openCardsCount % 2 > 0) {
         window.app.prevOpenCard = card;
-        // console.log('open cards pair =', window.app.openCardsCount % 2);
         return;
       }
 
@@ -124,10 +117,6 @@ function renderGameScreen() {
             closeMissedPair(card);
           }, 500);
         }
-
-        // setTimeout(() => {
-        //   alert('Упс! Вы не угадали!');
-        // }, 100);
       }
     });
   }
