@@ -162,6 +162,26 @@ function gameScreenTemplate() {
             ],
           },
           {
+            tag: 'div',
+            content: [
+              {
+                tag: 'img',
+                cls: ['top__error', 'hidden'],
+                attrs: { src: './static/lose.svg' },
+              },
+              {
+                tag: 'img',
+                cls: ['top__error', 'hidden'],
+                attrs: { src: './static/lose.svg' },
+              },
+              {
+                tag: 'img',
+                cls: ['top__error', 'hidden'],
+                attrs: { src: './static/lose.svg' },
+              },
+            ],
+          },
+          {
             tag: 'button',
             cls: 'restart-btn',
             content: 'Начать заново',

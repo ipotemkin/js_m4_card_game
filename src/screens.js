@@ -107,7 +107,8 @@ function renderGameScreen() {
           renderWinMsgBox();
         }
       } else {
-        if (++window.app.errorCount >= 3) {
+        showErrorIcons(++window.app.errorCount);
+        if (window.app.errorCount >= 3) {
           stopGame();
           renderLoseMsgBox();
         } else {
@@ -142,4 +143,11 @@ function renderMsgBox(message, icon) {
   // const form = screen.querySelector('.form-msgbox');
   const submitBtn = screen.querySelector('.form-msgbox__submit-btn');
   submitBtn.addEventListener('click', () => restartGame());
+}
+
+function showErrorIcons(errorCount) {
+  const errors = document.querySelectorAll('.top__error');
+  for (let i = 0; i < errorCount; i++) {
+    errors[i].classList.remove('hidden');
+  }
 }
