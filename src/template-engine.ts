@@ -1,4 +1,4 @@
-function templateEngine(block) {
+export default function templateEngine(block: any) {
   if (block === undefined || block === null || block === false) {
     return document.createTextNode('');
   }
@@ -36,5 +36,3 @@ function templateEngine(block) {
 
   return result;
 }
-
-module.exports = { templateEngine };

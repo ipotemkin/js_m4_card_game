@@ -1,4 +1,4 @@
-function cardBack() {
+export function cardBack() {
   return {
     tag: 'div',
     cls: 'card',
@@ -16,7 +16,7 @@ function cardBack() {
   };
 }
 
-function cardFront(image) {
+export function cardFront(image: string) {
   // const url = '../src/img/' + image;
   const url = './static/' + image;
   return {
@@ -38,7 +38,7 @@ function cardFront(image) {
   };
 }
 
-function welcomeScreenTemplate() {
+export function welcomeScreenTemplate() {
   return {
     tag: 'div',
     cls: 'canvas',
@@ -126,7 +126,7 @@ function welcomeScreenTemplate() {
   };
 }
 
-function gameScreenTemplate() {
+export function gameScreenTemplate() {
   const { errorIcon } = window.app;
   return {
     tag: 'div',
@@ -197,7 +197,7 @@ function gameScreenTemplate() {
   };
 }
 
-function msgBoxTemplate(message, time, icon = null) {
+export function msgBoxTemplate(message: string, time: string | null, icon: string | null = null) {
   return {
     tag: 'div',
     cls: 'form-msgbox-canvas',
@@ -239,10 +239,10 @@ function msgBoxTemplate(message, time, icon = null) {
   };
 }
 
-module.exports = {
-  cardBack,
-  cardFront,
-  welcomeScreenTemplate,
-  gameScreenTemplate,
-  msgBoxTemplate,
-};
+// module.exports = {
+//   cardBack,
+//   cardFront,
+//   welcomeScreenTemplate,
+//   gameScreenTemplate,
+//   msgBoxTemplate,
+// };

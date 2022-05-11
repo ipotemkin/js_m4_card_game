@@ -1,4 +1,4 @@
-import { templateEngine } from './template-engine';
+import templateEngine from './template-engine';
 import {
   welcomeScreenTemplate,
   gameScreenTemplate,
@@ -16,7 +16,7 @@ import {
 } from './game';
 import timer from './timer';
 
-function renderScreen(template, cleanBackground = true) {
+function renderScreen(template: Object, cleanBackground = true) {
   const { root } = window.app;
 
   // console.log(root);
@@ -27,7 +27,7 @@ function renderScreen(template, cleanBackground = true) {
   return screen;
 }
 
-export default function renderWelcomeScreen() {
+export default function renderWelcomeScreen(): void {
   const screen = renderScreen(welcomeScreenTemplate());
 
   const form = screen.querySelector('.form');
@@ -39,7 +39,7 @@ export default function renderWelcomeScreen() {
   form.addEventListener('click', hideError);
   submitBtn.addEventListener('blur', hideError);
 
-  form.addEventListener('submit', (event) => {
+  form.addEventListener('submit', (event: Event) => {
     event.preventDefault();
 
     const level = (window.app.level = +form.level.value);
@@ -66,7 +66,7 @@ export default function renderWelcomeScreen() {
   });
 }
 
-function renderGameScreen() {
+function renderGameScreen(): void {
   const screen = renderScreen(gameScreenTemplate());
   const cardBoard = screen.querySelector('.card-board');
   const restartBtn = screen.querySelector('.restart-btn');
@@ -126,18 +126,19 @@ function renderGameScreen() {
   window.app.timer = setInterval(timer, 1000);
 }
 
-function renderWinMsgBox() {
+function renderWinMsgBox(): void {
   renderMsgBox('Вы выиграли!', window.app.winIcon);
 }
 
-function renderLoseMsgBox() {
+function renderLoseMsgBox(): void {
   renderMsgBox('Вы проиграли!', window.app.loseIcon);
 }
 
-function renderMsgBox(message, icon) {
+function renderMsgBox(message: string, icon: string): void {
   const time = document.querySelector('.clock__time');
+  const timeToMsgBox = time ? time.textContent : '';
   const screen = renderScreen(
-    msgBoxTemplate(message, time.textContent, icon),
+    msgBoxTemplate(message, timeToMsgBox, icon),
     false
   );
   // const form = screen.querySelector('.form-msgbox');
@@ -145,7 +146,7 @@ function renderMsgBox(message, icon) {
   submitBtn.addEventListener('click', () => restartGame());
 }
 
-function showErrorIcons(errorCount) {
+function showErrorIcons(errorCount: number): void {
   const errors = document.querySelectorAll('.top__error');
   for (let i = 0; i < errorCount; i++) {
     errors[i].classList.remove('hidden');
