@@ -83,3 +83,8 @@ export function restartGame() {
   window.app.openCardsCount = 0;
   renderWelcomeScreen();
 }
+
+export function stopGame() {
+  clearInterval(window.app.timer);
+  window.app.timer = undefined;
+}

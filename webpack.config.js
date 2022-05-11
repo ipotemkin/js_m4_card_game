@@ -36,7 +36,12 @@ module.exports = {
     //   filename: 'screen3.html',
     //   template: './screen3.html',
     // }),
-    new CopyPlugin({ patterns: [{ from: 'src/img', to: 'static' }] }),
+    new CopyPlugin({
+      patterns: [
+        { from: 'src/img', to: 'static' },
+        // { from: 'src/styles', to: 'static' },
+      ],
+    }),
   ],
   optimization: { minimizer: ['...', new CssMinimizerPlugin()] },
 };

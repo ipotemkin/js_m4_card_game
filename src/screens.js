@@ -12,6 +12,7 @@ import {
   closeMissedPair,
   hideCardsFaces,
   restartGame,
+  stopGame,
 } from './game';
 import timer from './timer';
 
@@ -76,8 +77,9 @@ function renderGameScreen() {
 
   restartBtn.addEventListener('click', () => {
     // alert('Новая игра');
-    clearInterval(window.app.timer);
-    window.app.timer = undefined;
+    // clearInterval(window.app.timer);
+    // window.app.timer = undefined;
+    stopGame();
     restartGame();
   });
 
@@ -108,9 +110,10 @@ function renderGameScreen() {
       // if not
       if (checkCard(card)) {
         if (window.app.openCardsCount === window.app.maxCards) {
-          clearInterval(window.app.timer);
-          window.app.timer = undefined;
+          // clearInterval(window.app.timer);
+          // window.app.timer = undefined;
 
+          stopGame();
           renderWinMsgBox();
 
           // setTimeout(() => {
@@ -118,9 +121,14 @@ function renderGameScreen() {
           // }, 100);
         }
       } else {
-        setTimeout(() => {
-          closeMissedPair(card);
-        }, 500);
+        stopGame();
+        renderLoseMsgBox();
+
+        // to close a wrong pair if the player is given several attempts
+        // setTimeout(() => {
+        //   closeMissedPair(card);
+        // }, 500);
+
         // setTimeout(() => {
         //   alert('Упс! Вы не угадали!');
         // }, 100);
