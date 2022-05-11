@@ -127,11 +127,11 @@ function renderGameScreen() {
 }
 
 function renderWinMsgBox() {
-  renderMsgBox('Вы выиграли!', './static/win.svg');
+  renderMsgBox('Вы выиграли!', window.app.winIcon);
 }
 
 function renderLoseMsgBox() {
-  renderMsgBox('Вы проиграли!', './static/lose.svg');
+  renderMsgBox('Вы проиграли!', window.app.loseIcon);
 }
 
 function renderMsgBox(message, icon) {

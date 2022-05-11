@@ -127,6 +127,7 @@ function welcomeScreenTemplate() {
 }
 
 function gameScreenTemplate() {
+  const { errorIcon } = window.app;
   return {
     tag: 'div',
     cls: 'container',
@@ -167,17 +168,17 @@ function gameScreenTemplate() {
               {
                 tag: 'img',
                 cls: ['top__error', 'hidden'],
-                attrs: { src: './static/lose.svg' },
+                attrs: { src: errorIcon },
               },
               {
                 tag: 'img',
                 cls: ['top__error', 'hidden'],
-                attrs: { src: './static/lose.svg' },
+                attrs: { src: errorIcon },
               },
               {
                 tag: 'img',
                 cls: ['top__error', 'hidden'],
-                attrs: { src: './static/lose.svg' },
+                attrs: { src: errorIcon },
               },
             ],
           },
