@@ -4,7 +4,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
-const mode = process.env.MODE;
+const mode = process.env.NODE_ENV;
 
 console.log('--->', mode);
 
