@@ -5,7 +5,7 @@ import { cards } from './cards';
 
 
 type AppData = {
-  root: any,
+  root: HTMLElement | null,
   level?: number,  // game level
   cards: typeof cards,  // to store cards set
   maxCards: number,  // card number in the current game level

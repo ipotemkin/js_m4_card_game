@@ -19,7 +19,8 @@ import timer from './timer';
 function renderScreen(template: Object, cleanBackground = true) {
   const { root } = window.app;
 
-  // console.log(root);
+  if (!root) throw new Error("No root defined!");
+
   if (cleanBackground) root.textContent = '';
 
   const screen = templateEngine(template);
