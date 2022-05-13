@@ -19,7 +19,7 @@ import { timer } from './timer';
 function renderScreen(template: Object, cleanBackground = true) {
   const { root } = window.app;
 
-  if (!root) throw new Error("No root defined!");
+  if (!root) throw new Error('No root defined!');
 
   if (cleanBackground) root.textContent = '';
 
@@ -50,7 +50,7 @@ export default function renderWelcomeScreen(): void {
       return;
     }
 
-    let maxCards;
+    let maxCards: number;
     switch (window.app.level) {
       case 1:
         maxCards = 6;
@@ -81,11 +81,8 @@ function renderGameScreen(): void {
   clock.textContent = '00.00';
   const { maxCards } = window.app;
 
-  // console.log('renderGameScreen:maxCards =', maxCards);
-
   const cards = getCardsToPlay(maxCards);
   for (let i = 0; i < maxCards; i++) {
-    // cardBoard.appendChild(templateEngine(cardBack()));
     const card = cardBoard.appendChild(templateEngine(cardFront(cards[i].img)));
     card.dataset.cardPk = cards[i].pk;
     card.addEventListener('click', () => {
@@ -124,7 +121,7 @@ function renderGameScreen(): void {
   }
 
   setTimeout(hideCardsFaces, 5000);
-  window.app.timer = setInterval(timer, 1000);
+  window.app.timer = window.setInterval(timer, 1000);
 }
 
 function renderWinMsgBox(): void {
@@ -142,14 +139,11 @@ function renderMsgBox(message: string, icon: string): void {
     msgBoxTemplate(message, timeToMsgBox, icon),
     false
   );
-  // const form = screen.querySelector('.form-msgbox');
   const submitBtn = screen.querySelector('.form-msgbox__submit-btn');
   submitBtn.addEventListener('click', () => restartGame());
 }
 
 function showErrorIcons(errorCount: number): void {
   const errors = document.querySelectorAll('.top__error');
-  for (let i = 0; i < errorCount; i++) {
-    errors[i].classList.remove('hidden');
-  }
+  for (let i = 0; i < errorCount; i++) errors[i].classList.remove('hidden');
 }

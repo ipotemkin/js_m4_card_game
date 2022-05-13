@@ -5,8 +5,7 @@ export function getCardsToPlay(cardsCount: number): typeof cards {
   const randomNumbers = getRandomNumbers(cardsCount / 2);
   let cardsToPlay: typeof cards = [];
   for (let cardNumber of randomNumbers) {
-    cardsToPlay.push(cards[cardNumber]);
-    cardsToPlay.push(cards[cardNumber]);
+    for (let i = 0; i < 2; i++) cardsToPlay.push(cards[cardNumber]);
   }
   return shuffleCards(shuffleCards(cardsToPlay));
 }
@@ -34,8 +33,7 @@ export function shuffleCards(origin: typeof cards): typeof cards {
 
 export function closeMissedPair(card: HTMLDivElement): void {
   closeCard(card);
-  if (window.app.prevOpenCard)
-    closeCard(window.app.prevOpenCard);
+  if (window.app.prevOpenCard) closeCard(window.app.prevOpenCard);
 }
 
 export function checkCard(card: HTMLDivElement): boolean {

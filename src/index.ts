@@ -11,7 +11,7 @@ type AppData = {
   maxCards: number,  // card number in the current game level
   prevOpenCard?: HTMLDivElement,  // previous open card to check
   openCardsCount: number,
-  timer?: any,
+  timer?: number,
   timerValue: number,
   errorCount: number,
   loseIcon: string,
