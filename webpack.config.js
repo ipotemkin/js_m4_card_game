@@ -43,10 +43,7 @@ module.exports = {
     //   template: './screen3.html',
     // }),
     new CopyPlugin({
-      patterns: [
-        { from: 'src/img', to: 'static' },
-        // { from: 'src/styles', to: 'static' },
-      ],
+      patterns: [{ from: 'src/img', to: 'static' }],
     }),
   ],
   optimization: { minimizer: ['...', new CssMinimizerPlugin()] },
