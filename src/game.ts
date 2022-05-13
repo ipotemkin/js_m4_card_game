@@ -24,7 +24,7 @@ export function getRandomNumbers(n: number, from = 36): number[] {
   return result;
 }
 
-function shuffleCards(origin: typeof cards): typeof cards {
+export function shuffleCards(origin: typeof cards): typeof cards {
   let shuffled = origin
     .map((value) => ({ value, sort: Math.random() }))
     .sort((a, b) => a.sort - b.sort)

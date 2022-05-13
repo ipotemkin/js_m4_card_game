@@ -1,6 +1,5 @@
-export function timer(): void {
-  // ++window.app.timerValue;
-  showTime(++window.app.timerValue);
+export function timer(resultFunction: Function = showTime): void {
+  resultFunction(++window.app.timerValue);
 }
 
 export function showTime(seconds: number): void {
