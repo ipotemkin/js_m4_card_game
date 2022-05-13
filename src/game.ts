@@ -11,7 +11,7 @@ export function getCardsToPlay(cardsCount: number): typeof cards {
   return shuffleCards(shuffleCards(cardsToPlay));
 }
 
-function getRandomNumbers(n: number, from = 36): number[] {
+export function getRandomNumbers(n: number, from = 36): number[] {
   let counter = 0;
   const result: number[] = [];
   do {

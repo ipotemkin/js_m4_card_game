@@ -14,7 +14,7 @@ import {
   restartGame,
   stopGame,
 } from './game';
-import timer from './timer';
+import { timer } from './timer';
 
 function renderScreen(template: Object, cleanBackground = true) {
   const { root } = window.app;
